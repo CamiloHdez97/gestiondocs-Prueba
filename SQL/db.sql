@@ -40,6 +40,17 @@ CREATE TABLE documento (
 	impuestos DECIMAL NOT NULL
 );
 
+--Estado
+-- exitoso
+INSERT INTO estado (descripcion, exitoso) VALUES ('Recibido', true);
+INSERT INTO estado (descripcion, exitoso) VALUES ('En validación', true);
+INSERT INTO estado (descripcion, exitoso) VALUES ('Sin errores', true);
+-- fallido
+INSERT INTO estado (descripcion, exitoso) VALUES ('Formato Incorrecto', false);
+INSERT INTO estado (descripcion, exitoso) VALUES ('Con errores', false);
+INSERT INTO estado (descripcion, exitoso) VALUES ('Fuera de Vigencia', false);
+INSERT INTO estado (descripcion, exitoso) VALUES ('Fuera de Rango', false);
+
 --tuplas empresa
 INSERT INTO empresa (identificacion, razonsocial) VALUES ('ABC001', 'Company A, Inc.');
 INSERT INTO empresa (identificacion, razonsocial) VALUES ('ABC002', 'Empresa B, SA.');
@@ -87,17 +98,6 @@ INSERT INTO documento (idnumeracion, idestado, numero, fecha, base, impuestos)
 VALUES (7, 2, 5001, '2023-05-30', 600.00, 90.00);
 INSERT INTO documento (idnumeracion, idestado, numero, fecha, base, impuestos)
 VALUES (8, 7, 14001, '2023-06-01', 300.00, 45.00);
-
---Estado
--- exitoso
-INSERT INTO estado (descripcion, exitoso) VALUES ('Recibido', true);
-INSERT INTO estado (descripcion, exitoso) VALUES ('En validación', true);
-INSERT INTO estado (descripcion, exitoso) VALUES ('Sin errores', true);
--- fallido
-INSERT INTO estado (descripcion, exitoso) VALUES ('Formato Incorrecto', false);
-INSERT INTO estado (descripcion, exitoso) VALUES ('Con errores', false);
-INSERT INTO estado (descripcion, exitoso) VALUES ('Fuera de Vigencia', false);
-INSERT INTO estado (descripcion, exitoso) VALUES ('Fuera de Rango', false);
 
 -- Tuplas extras para pruebas
 -- tipodocumento
